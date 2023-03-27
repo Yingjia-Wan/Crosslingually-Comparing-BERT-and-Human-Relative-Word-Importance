@@ -7,12 +7,11 @@ The codes for multilingual data_extractor and analysis are based on https://gith
 
 ### 0. Requirements
 
-Python should be <= 3.8. We use the following packages (see requirements.txt):  
-numpy (1.19.5), tensorflow (2.4.1), transformers (4.2.2), scikit-learn (0.22.2), spacy (2.3.5), wordfreq (2.3.2), scipy (1.4.1)
-Note that later versions of transformers might lead to errors.
-
 To install, create and activate a virtual environment and run:  
 `pip3 install -r requirements.txt`
+Python should be <= 3.8. Note that later versions of transformers might lead to errors.
+
+You may also need to create two new folders under main: `data` and `results`.
 
 *If adding a corpus for a different language, you also need to download the language-specific spaCy model either to your virtual environment, or incorporate it in the script, from https://spacy.io/models.
 For example, for Chinese, run this before the experiments: `python -m spacy download zh_core_web_sm`.
