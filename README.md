@@ -24,6 +24,10 @@ pip3 install -r requirements.txt
 python extract_all.py
 python analyze_all.py
 ```
+
+- intermediate files:
+`analyze_all.py` (see section 1) require several intermediate result files to run. These files are created by running `extract_all.py`, and are supposed to be located in a `results` folder, consisting of files with the following formats `<corpus>_<hf_modelpath>_<importance type>.txt`, which align model relative importance to words in a corpus, `<corpus>_relfix_averages.txt`, which align words with human relative importance, and `<corpus>_sentences` which are simply the sentences in the corpus.
+
 - Extract_all.py takes exceptionally longer time to complete, as it calls to run scripts from both [extract_human_fixations] amd [extract model importance] folder. For example, it takes 3-4 hours to read and tokenize GECO_EN corpus to generate results for human relative fixation importacne. For each model per corpus (e.g., BERT-UNCASED for GECO_EN), it requires 6-7 hours to extract the 1st-layer attention, last-layer attention, and saliency scores. Therefore, results for these human importance and model importance from serveral language corpora are stored in the results file, so you can skip running `python extract_all.py` to save time.
 
 - If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
@@ -35,21 +39,12 @@ Once `analyze_all.py` has finished, a final Excel file will be created: `all_res
 - **Corpus statistical baselines** Correlation results (Spearman R) between human and model relative word importance and the two corpus statistical baselines: Word frequency and word length.
 - **Regression analysis**: Results of the linear regression analysis (out-of-date: look at section 5).  
 
-### 2. Optional preprocessing: `extract_all.py`
-`extract_all.py` is optional if you don't need to change or add any corpus/model, because the intermediate files have already been generated and saved in this repository.
 
-- intermediate files:
-`analyze_all.py` (see section 1) require several intermediate result files to run. These can be found in the `results` folder and consist of files with the following formats `<corpus>_<hf_modelpath>_<importance type>.txt`, which align model relative importance to words in a corpus, `<corpus>_relfix_averages.txt`, which align words with human relative importance, and `<corpus>_sentences` which are simply the sentences in the corpus.
-
-These files are created by running `extract_all.py`, which use the files created by the data extractor scripts in the folder `extract_human_fixations`. See its specific [README](extract_human_fixations/README.md) for information on how to add a new corpus or re-run the scripts.
+### 2. Adding Corpus:
+See the specific [README](extract_human_fixations/README.md) in the 'extract_human_fixations' folder for information on how to add a new corpus or re-run the scripts. In addition, specific suggestions and tips of changing the corpus and models in this project code can be found in Modification Tips.md.
 
 
-### 3. Adding Corpus and Model:
-Specific suggestions and tips of changing the corpus and models in this project code can be found in Debugging History.md.
-
-
-
-### 4. Additional fine-grained Analysis: 
+### 3. Additional fine-grained Analysis: 
 
 - Generating plots
 Run `python -m analysis.create_plots all_results-<timestamp>.xlsx` on the Excel file (see section 1) to create the respective plots. The plots are saved in the `plots` folder.
@@ -58,7 +53,7 @@ Run `python -m analysis.create_plots all_results-<timestamp>.xlsx` on the Excel 
 
 Since LMMs are not readily available in Python, the results of the regression analysis in the paper was done in Stata. To run the script, run `stata mixed-effects/lmm.do`. If you want to create the plots, run `convert_tables_to_results.py`, which will create a `conversion.xlxs` Excel file. Move the `with_reffect` tab of the `conversion.xlsx` Excel file to the `Regression analysis` tab of the original `all_results-<timestamp>.xlsx` Excel file. Then you can run `python -m analysis.create_plots all_results-<timestamp>.xlsx`.
 
-### 5. Folder structure
+### 4. Folder structure
 
 - **extract_human_fixations**: code to extract the relative fixation duration from the five eye-tracking corpora and average it over all subjects. Corpus data is also saved here. See [README](extract_human_fixations/README.md)
 
