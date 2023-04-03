@@ -34,10 +34,10 @@ python analyze_all.py
 
 - Once `analyze_all.py` has finished, a final Excel file will be created: `all_results-<timestamp>.xlsx`. It contains all of the results organized into four tabs.
 
-- **Model Importance**: Correlation results (Spearman R) between human and model relative word importance.
-- **Permutation Baselines** Correlation results between model relative word importance and random numbers. Used as a sanity check, but not presented in paper.
-- **Corpus statistical baselines** Correlation results (Spearman R) between human and model relative word importance and the two corpus statistical baselines: Word frequency and word length.
-- **Regression analysis**: Results of the linear regression analysis (out-of-date: look at section 5).  
+-- **Model Importance**: Correlation results (Spearman R) between human and model relative word importance.
+-- **Permutation Baselines** Correlation results between model relative word importance and random numbers. Used as a sanity check, but not presented in paper.
+-- **Corpus statistical baselines** Correlation results (Spearman R) between human and model relative word importance and the two corpus statistical baselines: Word frequency and word length.
+-- **Regression analysis**: Results of the linear regression analysis (out-of-date: look at section 5).  
 
 
 ### 2. Adding Corpus:
