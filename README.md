@@ -17,7 +17,7 @@ You may also need to create two new folders under main: `data` and `results`.
 For example, for Chinese, run this before the experiments: `python -m spacy download zh_core_web_sm`.
 
 ### 1. Rerunning the experiments
-- The complete commands to run the whole experiments (without plots):
+The complete commands to run the whole experiments (without plots):
 ```
 cd L2-English-eyetracking-data-in-predicting-human-processing/cross_lingual_relative_importance-main
 pip3 install -r requirements.txt
@@ -32,7 +32,7 @@ python analyze_all.py
 
 - If running `analyze_all.py` for the first time, the script will take a bit longer to create two `.csv`-files: `aligned_words.csv` and `human_words.csv`. These contain all word-level information needed to run the experiments, e.g. token, relative importance, word length and word frequency. These are saved in the `results/words` folder and can be used for additional analysis.
 
-Once `analyze_all.py` has finished, a final Excel file will be created: `all_results-<timestamp>.xlsx`. It contains all of the results organized into four tabs.
+- Once `analyze_all.py` has finished, a final Excel file will be created: `all_results-<timestamp>.xlsx`. It contains all of the results organized into four tabs.
 
 - **Model Importance**: Correlation results (Spearman R) between human and model relative word importance.
 - **Permutation Baselines** Correlation results between model relative word importance and random numbers. Used as a sanity check, but not presented in paper.
