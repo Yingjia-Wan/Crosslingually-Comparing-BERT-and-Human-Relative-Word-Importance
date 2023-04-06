@@ -3,7 +3,7 @@ This project contains the code for the 4k essay by Mphil student Yingjia Wan, De
 
 ### Acknowledgements
 A large part of https://github.com/beinborn/relative_importance has been re-purposed for this project.
-The codes for human_fixations_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. 
+The codes for the folder 'extract_human_fixations' and 'analysis' are based on https://github.com/felixhultin/cross_lingual_relative_importance. 
 
 ### 0. Requirements
 
