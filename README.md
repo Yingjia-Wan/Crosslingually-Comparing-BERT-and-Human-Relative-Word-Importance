@@ -2,8 +2,8 @@
 This project contains the code for the 4k essay by Mphil student Yingjia Wan, Department of Theoretical and Applied Linguistics, University of Cambridge.
 
 ### Acknowledgements
-A large part of the code base of https://github.com/beinborn/relative_importance has been re-purposed for this project.
-The codes for multilingual data_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. Necessary modifications of corpus data and scripts are made by me and recorded in steps at [Debugging History](Debugging History).
+A large part of https://github.com/beinborn/relative_importance has been re-purposed for this project.
+The codes for human_fixations_extractor and analysis are based on https://github.com/felixhultin/cross_lingual_relative_importance. 
 
 ### 0. Requirements
 
